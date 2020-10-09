@@ -5,7 +5,7 @@ app.use(express.json());
 const courses = [
     { id: 1, name: 'Python'},
     { id: 2, name: 'Java'},
-    { id: 3, name: 'Javascript'}
+    { id: 3, name: 'Javascript'},
 ];
 
 app.get('/', (req,res) =>{
@@ -25,11 +25,11 @@ app.get('/api/courses/:id', (req, res) =>{
 });
 
 // Create a course
-app.post('api/courses', (req,res) =>{
+app.post('/api/courses', (req,res) => {
     const course = {
-        id: courses.lenght + 1,
+        id: courses.length + 1,
         name: req.body.name
-    }
+    };
     courses.push(course);
     res.send(course);
 });
